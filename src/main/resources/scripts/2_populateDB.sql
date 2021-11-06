@@ -1,0 +1,22 @@
+use goit_hw_db;
+
+INSERT INTO `goit_hw_db`.`skills` (`id`,`language`,`level`) VALUES (1,'Java','Middle');
+INSERT INTO `goit_hw_db`.`skills` (`id`,`language`,`level`) VALUES (2,'Java','Junior');
+INSERT INTO `goit_hw_db`.`skills` (`id`,`language`,`level`) VALUES (3,'Java','Senior');
+INSERT INTO `goit_hw_db`.`skills` (`id`,`language`,`level`) VALUES (4,'C++','Junior');
+INSERT INTO `goit_hw_db`.`skills` (`id`,`language`,`level`) VALUES (5,'C++','Middle');
+INSERT INTO `goit_hw_db`.`skills` (`id`,`language`,`level`) VALUES (6,'C++','Senior');
+INSERT INTO `goit_hw_db`.`skills` (`id`,`language`,`level`) VALUES (7,'C#','Junior');
+INSERT INTO `goit_hw_db`.`skills` (`id`,`language`,`level`) VALUES (8,'C#','Middle');
+INSERT INTO `goit_hw_db`.`skills` (`id`,`language`,`level`) VALUES (9,'C#','Senior');
+INSERT INTO `goit_hw_db`.`companies` (`id`, `name_company`) VALUES (1, 'EPAM');
+INSERT INTO `goit_hw_db`.`companies` (`id`, `name_company`) VALUES (2, 'SoftServe');
+INSERT INTO `goit_hw_db`.`companies` (`id`, `name_company`) VALUES (3, 'NiX');
+INSERT INTO `goit_hw_db`.`companies` (`id`, `name_company`) VALUES (4, 'Luxoft');
+insert into `goit_hw_db`.`customers` (`id`, `name_customer`) values (1, 'Alfa') , (2, 'Beta') , (3, 'Gama'), (4,'KuklaVod');
+insert into `goit_hw_db`.`developers` (`id`,`name_developer`,`age`,`salary`) values (1, 'Max', 21,5550), (2, 'Vlad', 22,6000),(3,'Kolya',23,5000) , (4, 'Olia', 19,4000) , (5, 'Nikita', 30,3000);
+insert into `goit_hw_db`.`projects` (`id` , `name_project`, `cost`,`create_date`) values (1, 'SpaceX',10000,'22.09.2020') , (2, 'Balalayka',2,'20.10.2015') , (3, 'Sendler',14000,'22.08.2001') , (4, 'Loader',2000,'22.09.2000') , (5, 'NoX',3000,'22.09.2004');
+insert into `goit_hw_db`.`companies_projects` (`id_company`,`id_project`) values (1,1) , (2,2) , (3,3) , (4,1);
+insert into `goit_hw_db`.`projects_customers` (`id_customer`,`id_project`) values (1,1), (2,2) ,(3,3) ,(4,4);
+insert into `goit_hw_db`.`developers_skills` (`id_developer`,`id_skill`) values (1, 2), (2,1),(3,8),(4,9),(5,3);
+insert into `goit_hw_db`.`projects_developers` (`id_project`,`id_developer`) values (1,1),(5,1),(3,2),(5,2),(2,3);
