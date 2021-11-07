@@ -25,4 +25,11 @@ public class Customer implements BaseEntity<Long>, Serializable {
 
     @Column(name = "name_customer")
     private String name;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "projects_customers",
+            joinColumns = @JoinColumn(name = "id_customer"),
+            inverseJoinColumns = @JoinColumn(name = "id_project")
+    )
+    private Set<Project> projects;
 }

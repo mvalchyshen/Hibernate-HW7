@@ -2,6 +2,7 @@ package ua.goit.projectmanager.model;
 
 import com.sun.source.doctree.SeeTree;
 import lombok.*;
+import org.apache.ibatis.annotations.Many;
 
 import javax.persistence.*;
 import java.io.Serial;
@@ -34,4 +35,13 @@ public class Project implements BaseEntity<Long>, Serializable {
     private String createDate;
     @ManyToMany(mappedBy = "projects")
     private Set<Company> companies;
+    @ManyToMany(mappedBy = "projects")
+    private Set<Customer> customers;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "projects_developers",
+            joinColumns = @JoinColumn(name = "id_project"),
+            inverseJoinColumns = @JoinColumn(name = "id_developer")
+    )
+    private Set<Developer> developers;
 }

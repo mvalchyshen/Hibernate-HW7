@@ -29,5 +29,6 @@ public class Skill implements BaseEntity<Long>, Serializable {
     @Column(name = "level", columnDefinition = "ENUM('Junior', 'Middle', 'Senior')")
     @Enumerated(EnumType.STRING)
     private Level level;
-
+    @ManyToMany(mappedBy = "skills")
+    private Set<Developer> developers;
 }
